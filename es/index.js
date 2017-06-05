@@ -42,7 +42,7 @@ export default function axiosRetry(axios, {
     config.retryCount = config.retryCount || 0;
 
     const shouldRetry = retryCondition(error)
-      && error.code !== 'ECONNABORTED'
+      // && error.code !== 'ECONNABORTED'
       && config.retryCount < retries
       && isRetryAllowed(error);
 
